@@ -18,4 +18,7 @@
 
 # what is Linux file system?
 
-# 
+# Diff between Linux and Unix?
+
+# Status of Processes in unix?
+

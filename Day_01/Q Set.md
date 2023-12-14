@@ -129,10 +129,105 @@ The Linux system architecture encompasses various components that work together 
 
 Understanding the Linux system architecture helps users and administrators navigate the operating system, customize configurations, and optimize performance based on their specific needs.
 
-
 # what is Linux file system?
+1. **Hierarchical Structure:**
+   - The Linux file system follows a hierarchical structure with a root directory denoted by "/". All other directories and files are organized beneath this root directory. This hierarchical arrangement facilitates a systematic organization of data.
+
+2. **Directories and Files:**
+   - Directories (folders) are used to organize files, and files contain data or programs. Files can be of various types, including text files, binary executables, directories, symbolic links, and more.
+
+3. **File Paths:**
+   - File paths in Linux describe the location of a file or directory within the file system. Absolute paths start from the root directory ("/"), while relative paths are defined in relation to the current working directory.
+
+4. **File System Types:**
+   - Linux supports various file system types, and the choice of file system depends on factors such as performance, reliability, and use case. Common file systems include ext4 (the default for many distributions), Btrfs, XFS, and others.
+
+5. **Mount Points:**
+   - Additional storage devices or partitions can be attached to the file system by mounting them at specific points in the directory hierarchy. These mount points become part of the overall file system structure.
+
+6. **Special Directories:**
+   - Certain directories in the Linux file system have specific purposes. For example:
+      - `/bin`: Essential system binaries.
+      - `/etc`: Configuration files.
+      - `/home`: User home directories.
+      - `/var`: Variable data, including logs and temporary files.
+      - `/usr`: User programs and utilities.
+
+7. **Inodes:**
+   - Inodes are data structures that store information about files on the file system. They include metadata such as file permissions, ownership, timestamps, and pointers to data blocks.
+
+8. **Symbolic Links:**
+   - Symbolic links (symlinks) are references to files or directories. They allow for indirect references and are similar to shortcuts in other operating systems.
+
+9. **Permissions and Ownership:**
+   - Linux enforces file permissions and ownership to control access to files and directories. Each file has an owner, a group, and a set of permissions for the owner, group, and others.
+
+10. **File System Hierarchy Standard (FHS):**
+    - The File System Hierarchy Standard is a set of guidelines that define the directory structure and content placement on Linux systems. It helps ensure consistency across different distributions.
 
 # Diff between Linux and Unix?
+**1. **Origins and Ownership:**
+   - **Unix:** Unix is an operating system developed in the 1960s and 1970s at Bell Labs (AT&T) by Ken Thompson, Dennis Ritchie, and others. It is a proprietary system with various commercial implementations.
+   - **Linux:** Linux is a Unix-like operating system developed in the early 1990s by Linus Torvalds. It is open-source and freely available. While Linux shares many Unix principles, it is not a direct descendant of Unix.
+
+**2. **Kernel:**
+   - **Unix:** Unix operating systems have different kernels, and the most well-known ones are AIX (IBM), Solaris (Oracle), and HP-UX (Hewlett Packard).
+   - **Linux:** Linux has its own kernel, the Linux kernel. While inspired by Unix, the Linux kernel is an independent development and not a direct derivative of any specific Unix version.
+
+**3. **Licensing:**
+   - **Unix:** Unix systems are typically proprietary, and the source code is not freely available. Users generally need to purchase licenses for Unix-based operating systems.
+   - **Linux:** Linux is distributed under open-source licenses, such as the GNU General Public License (GPL). Users can freely use, modify, and distribute Linux, making it accessible to a broad audience.
+
+**4. **Development Model:**
+   - **Unix:** Development of Unix systems is typically carried out by specific vendors (e.g., IBM, Oracle) with contributions from a closed group of developers.
+   - **Linux:** Linux development follows a more collaborative and distributed model. Thousands of developers worldwide contribute to the Linux kernel and various components, making it a community-driven project.
+
+**5. **Distributions:**
+   - **Unix:** Unix systems come in various flavors or distributions, each associated with a specific vendor. Examples include AIX, Solaris, and HP-UX.
+   - **Linux:** Linux is available in numerous distributions, often referred to as "distros." Examples include Ubuntu, Debian, Fedora, and CentOS. Each distribution may have its package management system and configuration.
+
+**6. **Commands and Shells:**
+   - **Unix:** While Unix commands and shells are standardized to some extent (e.g., POSIX), there can be variations in syntax and available utilities between different Unix implementations.
+   - **Linux:** Linux follows similar command syntax and shell conventions but may have differences in specific commands and options compared to Unix systems.
+
+**7. **Hardware Support:**
+   - **Unix:** Historically, Unix was developed to run on various types of hardware, including proprietary architectures. However, modern Unix systems often run on specific vendor hardware.
+   - **Linux:** Linux has broad hardware support and can run on a wide range of architectures, from personal computers to embedded devices to supercomputers.
 
 # Status of Processes in unix?
+In Unix-like operating systems, the status of processes is tracked and can be monitored through various commands and tools. Here are some key concepts related to the status of processes in Unix:
+
+1. **Process States:**
+   - Processes in Unix can be in one of several states, including:
+     - **Running:** The process is currently executing.
+     - **Stopped:** The process has been stopped, often by a user or a signal.
+     - **Sleeping:** The process is waiting for an event or resource, such as I/O completion.
+     - **Zombie:** The process has terminated, but its entry still exists in the process table until the parent process retrieves its exit status.
+
+2. **Process Identification (PID):**
+   - Each process in Unix is assigned a unique process identification number (PID). PIDs are crucial for identifying and managing processes.
+
+3. **Monitoring Processes:**
+   - The `ps` command is commonly used to display information about processes. For example, `ps aux` provides a detailed list of currently running processes, including their status, resource usage, and other details.
+
+4. **Foreground and Background Processes:**
+   - Processes in Unix can run in the foreground or background. Foreground processes receive input from and send output to the terminal, while background processes run independently of the terminal.
+
+5. **Job Control:**
+   - Job control allows users to manage multiple processes and their status in the shell. Commands like `fg` (foreground), `bg` (background), and `jobs` provide control over running processes.
+
+6. **Signals:**
+   - Signals are used to communicate with processes and can alter their behavior. For example, the `SIGKILL` signal can be sent to terminate a process forcefully.
+
+7. **Process Priority:**
+   - Processes have a priority associated with them, often referred to as the "nice" value. A lower nice value indicates a higher priority, and processes with higher priority receive more CPU time.
+
+8. **Process Termination:**
+   - Processes can terminate voluntarily or be terminated by a signal. The `kill` command is commonly used to send signals to processes. For example, `kill -9 PID` forcefully terminates a process.
+
+9. **Process Parent and Child Relationship:**
+   - Each process in Unix has a parent process, except for the initial process (usually PID 1). When a process spawns a new process (child), the child's parent is the spawning process.
+
+10. **Process Information in `/proc`:**
+    - Unix-like systems often expose process-related information in the `/proc` virtual file system. For example, `/proc/PID/status` contains status information about a specific process with PID.
 

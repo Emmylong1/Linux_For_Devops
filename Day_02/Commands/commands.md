@@ -74,6 +74,37 @@ ssh :-Connect to a remote server
 
 scp :-Copy files between local and remote machines
 
+nohup :- The nohup command is used in Unix and Unix-like operating systems to run a command or script in the background, detached from the terminal, and immune to hang-ups. 
+
+
+## Advanced commands for Linux
+
+1. **grep:** Search for a pattern in files.
+
+2. **find:** Search for files and directories in a directory hierarchy.
+
+3. **awk:** Process and analyze text files using a pattern-action paradigm.
+
+4. **sed:** Stream editor for filtering and transforming text.
+
+5. **rsync:** Sync files and directories between two locations.
+
+6. **curl:** Transfer data with URLs.
+
+7. **grep, awk, and sed combination:** Powerful text processing pipeline.
+
+8. **xargs:** Build and execute command lines from standard input.
+
+9. **tee:** Redirect output to multiple files or processes.
+
+10. **alias:** Create a shortcut for a command or a sequence of commands.
+
+11. **lsof:** List open files and the processes that opened them.
+
+
+
+
+
 
 
 
